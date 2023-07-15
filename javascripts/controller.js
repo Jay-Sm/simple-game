@@ -8,35 +8,55 @@ document.addEventListener("keypress", (event) => {
   switch (event.key) {
     case "w":
       setTimeout(() => {
-        topCords -= 60;
+        let WTopCords = topCords;
+        if ((WTopCords -= 59) > 60) {
+          topCords -= 60;
 
-        player.style.top = topCords + "px";
+          player.style.top = topCords + "px";
+        } else {
+          console.error("Out Of Bounds Movment Attempted");
+        }
       }, 150);
 
       break;
 
     case "a":
       setTimeout(() => {
-        leftCords -= 60;
+        let ALeftCords = leftCords;
+        if ((ALeftCords -= 59) > 60) {
+          leftCords -= 60;
 
-        player.style.left = leftCords + "px";
+          player.style.left = leftCords + "px";
+        } else {
+          console.error("Out Of Bounds Movment Attempted");
+        }
       }, 150);
 
       break;
 
     case "d":
       setTimeout(() => {
-        leftCords += 60;
+        let DLeftCords = leftCords;
+        if ((DLeftCords += 59) < 1380) {
+          leftCords += 60;
 
-        player.style.left = leftCords + "px";
+          player.style.left = leftCords + "px";
+        } else {
+          console.error("Out Of Bounds Movment Attempted");
+        }
       }, 150);
       break;
 
     case "s":
       setTimeout(() => {
-        topCords += 60;
+        let DLeftCords = topCords;
+        if ((DLeftCords += 59) < 721) {
+          topCords += 60;
 
-        player.style.top = topCords + "px";
+          player.style.top = topCords + "px";
+        } else {
+          console.error("Out Of Bounds Movment Attempted");
+        }
       }, 150);
       break;
   }
