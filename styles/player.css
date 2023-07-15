@@ -1,0 +1,7 @@
+#player {
+  width: 60px;
+  height: 60px;
+  background-color: rgb(236, 236, 236);
+
+  position: absolute;
+}
